@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stellarium – Prijava in registracija</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <main class="razcep" id="stran-prijava">
+    <section class="levo">
+      <div class="logo"></div>
+      <h1>Stellarium</h1>
+      <p class="citat">Nočno nebo te že čaka.</p>
+      <ul class="prednosti">
+        <li>&#9733; Zvezdne karte za vsako noč</li>
+        <li>&#9733; Opomniki za astronomske dogodke</li>
+        <li>&#9733; Skupnost opazovalcev neba</li>
+      </ul>
+    </section>
+
+    <section class="desno">
+      <h2>Dobrodošel nazaj</h2>
+      <p class="podnaslov">Vpiši se v svoj račun.</p>
+
+      <form action="#" method="post">
+        <div class="polje">
+          <label for="prijava-up">E-pošta ali uporabniško ime</label>
+          <input type="text" id="prijava-up" name="uporabnik" placeholder="janez.novak@primer.si" required>
+        </div>
+
+        <div class="polje">
+          <div class="vrstica-oznaka">
+            <label for="prijava-geslo">Geslo</label>
+            <a href="#" class="pozabljeno">Pozabljeno geslo?</a>
+          </div>
+          <input type="password" id="prijava-geslo" name="geslo" placeholder="Tvoje geslo" required>
+        </div>
+
+        <label class="izbira zapomni">
+          <input type="checkbox" name="zapomni"> Zapomni si me na tej napravi
+        </label>
+
+        <button type="submit">Prijava</button>
+      </form>
+
+      <div class="locilo"><span>ali</span></div>
+
+      <p class="noga">Še nimaš računa? <a href="#registracija" data-stran="registracija">Registracija</a></p>
+    </section>
+  </main>
+
+
+  <main class="kartica" id="stran-registracija" hidden>
+    <header class="glava">
+      <div class="logo"></div>
+      <h1>Stellarium</h1>
+      <p>Ustvari svoj račun in začni raziskovati nočno nebo.</p>
+    </header>
+
+    <form action="#" method="post">
+      <div class="vrstica">
+        <div class="polje">
+          <label for="ime">Ime</label>
+          <input type="text" id="ime" name="ime" placeholder="Ime" required>
+        </div>
+        <div class="polje">
+          <label for="priimek">Priimek</label>
+          <input type="text" id="priimek" name="priimek" placeholder="Priimek" required>
+        </div>
+      </div>
+
+      <div class="polje">
+        <label for="email">E-pošta</label>
+        <input type="email" id="email" name="email" placeholder="janez.novak@primer.si" required>
+      </div>
+
+      <div class="polje">
+        <label for="uporabnik">Uporabniško ime</label>
+        <input type="text" id="uporabnik" name="uporabnik" placeholder="Uporabniško ime" minlength="4" required>
+      </div>
+
+      <div class="vrstica">
+        <div class="polje">
+          <label for="geslo">Geslo</label>
+          <input type="password" id="geslo" name="geslo" placeholder="Vsaj 8 znakov" minlength="8" required>
+        </div>
+        <div class="polje">
+          <label for="geslo2">Ponovi geslo</label>
+          <input type="password" id="geslo2" name="geslo2" placeholder="Ponovi geslo" minlength="8" required>
+        </div>
+      </div>
+
+      <div class="vrstica">
+        <div class="polje">
+          <label for="rojstvo">Datum rojstva</label>
+          <input type="date" id="rojstvo" name="rojstvo" required>
+        </div>
+        <div class="polje">
+          <label for="drzava">Država</label>
+          <select id="drzava" name="drzava">
+            <option value="si" selected>Slovenija</option>
+            <option value="hr">Hrvaška</option>
+            <option value="at">Avstrija</option>
+            <option value="it">Italija</option>
+            <option value="drugo">Drugo</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Spol</legend>
+        <label class="izbira"><input type="radio" name="spol" value="m"> Moški</label>
+        <label class="izbira"><input type="radio" name="spol" value="z"> Ženski</label>
+        <label class="izbira"><input type="radio" name="spol" value="d" checked>Za v Idrijo</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Kaj te zanima?</legend>
+        <label class="izbira"><input type="checkbox" name="zanimanje" value="zvezde"> Zvezde</label>
+        <label class="izbira"><input type="checkbox" name="zanimanje" value="planeti"> Planeti</label>
+        <label class="izbira"><input type="checkbox" name="zanimanje" value="fotografija"> Astrofotografija</label>
+      </fieldset>
+
+      <div class="polje">
+        <label for="sporocilo">Povej nam kaj o sebi</label>
+        <textarea id="sporocilo" name="sporocilo" rows="3" placeholder="Neobvezno ..."></textarea>
+      </div>
+
+      <label class="izbira pogoji">
+        <input type="checkbox" id="pogoji" name="pogoji" required>
+        Strinjam se s <a href="#">pogoji uporabe</a> in <a href="#">politiko zasebnosti</a>.
+      </label>
+
+      <button type="submit">Ustvari račun</button>
+
+      <p class="noga">Že imaš račun? <a href="#prijava" data-stran="prijava">Prijava</a></p>
+    </form>
+  </main>
+
+  <footer class="noga-strani">
+    Copyright &copy; 2026 Stellarium. Vse pravice pridržane.
+    <a href="#">Pogoji uporabe</a> |
+    <a href="#">Nastavitve piškotkov</a> |
+    <a href="#">Zasebnost</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="index.js"></script>
+</body>
+</html>
